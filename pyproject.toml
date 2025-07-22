@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "sengy"
+version = "0.1.0"
+description = "AI agent for software engineers and engineering managers - Jira analysis and content processing"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "sengy"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+langchain = "^0.3.26"
+langchain-community = "^0.3.27"
+langchain-core = "^0.3.69"
+langchain-openai = "^0.3.28"
+langchain-text-splitters = "^0.3.8"
+langgraph = "^0.5.3"
+langgraph-checkpoint = "^2.1.0"
+langgraph-prebuilt = "^0.5.2"
+langgraph-sdk = "^0.1.73"
+langsmith = "^0.4.6"
+rich = "^14.0.0"
+pynput = "^1.8.1"
+atlassian-python-api = "^4.0.4"
+openai = "^1.97.0"
+pydantic = "^2.11.7"
+pydantic-settings = "^2.10.1"
+python-dateutil = "^2.9.0"
+requests = "^2.32.4"
+pygithub = "^2.6.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+isort = "^6.0.1"
+autoflake = "^2.3.1"
+
+[tool.poetry.group.eval.dependencies]
+# LangSmith evaluation dependencies will be added here
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+include_trailing_comma = true
